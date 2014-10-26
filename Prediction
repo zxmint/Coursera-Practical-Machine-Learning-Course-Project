@@ -1,0 +1,11 @@
+The random forest model was initially used to prediction.
+
+model.rf <- train(y=as.factor(train$classe), x=train[,!"classe",with=F], tuneGrid=data.frame(mtry=3), trControl=trainControl(method="none"), method="parRF")
+confusionMatrix(predict(model.rf, newdata=transform.features(test)), factor(test$classe))
+It's estimated that the out of sample error would reflect the Kappa statistic of r confusionMatrix(predict(model.rf, newdata=transform.features(test)), factor(test$classe))$overall["Kappa"].
+
+The random forest model was initially used to prediction.
+
+model.rf <- train(y=as.factor(train$classe), x=train[,!"classe",with=F], tuneGrid=data.frame(mtry=3), trControl=trainControl(method="none"), method="parRF")
+confusionMatrix(predict(model.rf, newdata=transform.features(test)), factor(test$classe))
+It's estimated that the out of sample error would reflect the Kappa statistic of r confusionMatrix(predict(model.rf, newdata=transform.features(test)), factor(test$classe))$overall["Kappa"].
